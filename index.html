@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tontine OrdiFacile - Acquérez votre ordinateur en 3 mensualités!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --primary-light: #2e86c1;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3') center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+        
+        .feature-box {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background: white;
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .countdown-box {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            padding: 12px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            transform: scale(1.05);
+        }
+        
+        .btn-disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .urgency-banner {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { background-color: var(--secondary); }
+            50% { background-color: #c0392b; }
+            100% { background-color: var(--secondary); }
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 82, 118, 0.95);
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .how-it-works-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .limited-offer {
+            border: 3px dashed var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            background: #fffaf0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .logo {
+                height: 60px;
+            }
+        }
+        
+        .brand-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-left: 10px;
+            color: white;
+        }
+        
+        .partnership-section {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .navbar {
+            background: linear-gradient(to right, var(--primary), var(--primary-light)) !important;
+        }
+        
+        footer {
+            background: linear-gradient(to right, var(--primary), var(--primary-light)) !important;
+        }
+        
+        .custom-navbar {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <div class="container">
+            OFFRE EXCEPTIONNELLE ! Seulement 50 places disponibles pour cette première édition ! Ne manquez pas cette chance !
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand logo-container" href="#">
+              <img src="logo.png" alt="Barhama Business" class="logo">
+                
+                <span class="brand-text d-none d-md-inline">TONTINE ORDIFACILE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#avantages">Avantages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fonctionnement">Comment ça marche</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="mb-4">
+                <div class="logo mx-auto" style="width: fit-content;">
+                    <span style="font-weight: 800; color: #1a5276; font-size: 1.8rem;">BARHAMA</span>
+                    <span style="font-weight: 600; color: #2e86c1; font-size: 1.8rem;">BUSINESS</span>
+                </div>
+            </div>
+            <h1 class="display-3 fw-bold mb-4">ACQUÉREZ VOTRE ORDINATEUR EN 3 FOIS SANS FRAIS !</h1>
+            <p class="lead mb-5">Une initiative exclusive de <strong>Barhama Business</strong> - Ne laissez pas le manque de cash vous priver d'un outil essentiel</p>
+            
+            <div class="countdown-box mx-auto" style="max-width: 600px;">
+                <h3 class="mb-4">INSCRIPTIONS OUVERTES DANS:</h3>
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Jours</div>
+                    </div>
+                    <div>
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Heures</div>
+                    </div>
+                    <div>
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div>
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Secondes</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="mt-4">Les inscriptions débutent le <strong>1er Septembre 2025</strong></p>
+            
+            <a href="#" class="btn btn-primary btn-lg mt-3" id="inscription-link" onclick="return checkInscriptionDate()">
+                <i class="fas fa-edit me-2"></i>JE M'INSCRIS MAINTENANT !
+            </a>
+            
+            <div class="mt-4">
+                <small class="text-warning">*Seulement 50 places disponibles - Premiers inscrits, premiers servis</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="py-5" id="avantages">
+        <div class="container">
+            <h2 class="section-title text-center">POURQUOI CHOISIR ORDIFACILE ?</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Paiement Échelonné</h3>
+                        <p>Payez votre ordinateur en 3 mensualités sans frais supplémentaires. Seulement 5000 FCFA de frais d'adhésion.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Sécurité Totale</h3>
+                        <p>Contrat légalement établi pour protéger vos intérêts. Tous les paiements sont tracés et reçus.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Garantie Inclusion</h3>
+                        <p>6 mois de garantie sur tous les ordinateurs. Assistance technique incluse pendant la période de garantie.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="limited-offer mt-5">
+                <h3 class="text-danger"><i class="fas fa-exclamation-circle me-2"></i>OFFRE LIMITÉE</h3>
+                <p>Cette première édition de la Tontine OrdiFacile est limitée à <strong>50 participants seulement</strong>. Une fois ces places pourvues, les inscriptions seront closes jusqu'à la prochaine édition. Ne tardez pas !</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-5 bg-light" id="fonctionnement">
+        <div class="container">
+            <h2 class="section-title text-center">COMMENT FONCTIONNE NOTRE TONTINE ?</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="how-it-works-step">
+                        <div class="step-number">1</div>
+                        <h3>Inscription et Frais d'Adhésion</h3>
+                        <p>Remplissez le formulaire d'inscription et payez les frais d'adhésion de 5000 FCFA (non remboursables).</p>
+                    </div>
+                    
+                    <div class="how-it-works-step">
+                        <div class="step-number">2</div>
+                        <h3>Signature du Contrat</h3>
+                        <p>Nous établissons un contrat de tontine qui précise toutes les conditions et modalités de paiement.</p>
+                    </div>
+                    
+                    <div class="how-it-works-step">
+                        <div class="step-number">3</div>
+                        <h3>Paiement des Mensualités</h3>
+                        <p>Vous effectuez 3 versements mensuels égaux (avant le 10 de chaque mois) pour le prix de l'ordinateur choisi.</p>
+                    </div>
+                    
+                    <div class="how-it-works-step">
+                        <div class="step-number">4</div>
+                        <h3>Livraison de l'Ordinateur</h3>
+                        <p>Dès le dernier paiement effectué, nous vous livrons votre ordinateur sous 24h avec sa garantie de 6 mois.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3" alt="Processus tontine" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partnership-section">
+        <div class="container">
+            <h2 class="section-title text-center">UNE INITIATIVE EXCLUSIVE BARHAMA BUSINESS</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="lead">Barhama Business est votre partenaire de confiance pour l'acquisition de matériel informatique de qualité. Avec des années d'expérience dans le reconditionnement d'ordinateurs, nous vous garantissons des appareils performants et fiables.</p>
+                    <div class="mt-5">
+                        <div class="logo mx-auto" style="width: fit-content; padding: 10px 20px;">
+                            <span style="font-weight: 800; color: #1a5276; font-size: 2.2rem;">BARHAMA</span>
+                            <span style="font-weight: 600; color: #2e86c1; font-size: 2.2rem;">BUSINESS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light" id="faq">
+        <div class="container">
+            <h2 class="section-title text-center">QUESTIONS FRÉQUEMMENT POSÉES</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <h4>Qu'est-ce qu'une tontine OrdiFacile ?</h4>
+                        <p>Il s'agit d'un système de financement participatif qui vous permet d'acquérir un ordinateur portable en payant en 3 mensualités sans frais supplémentaires, après avoir payé des frais d'adhésion de 5000 FCFA.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Que se passe-t-il si je ne peux pas payer une mensualité à temps ?</h4>
+                        <p>En cas de retard de mais de 30 jours, vous devrez payer deux mensualités pour vous remettre à jour. Après 60 jours de retard, le contrat sera résilié avec une pénalité de 10% sur les montants déjà versés.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Quand vais-je recevoir mon ordinateur ?</h4>
+                        <p>Vous recevrez votre ordinateur dans les 24 heures suivant le dernier paiement. Tous les ordinateurs sont livrés avec une garantie de 6 mois.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Comment puis-je effectuer mes paiements ?</h4>
+                        <p>Les paiements se font via Wave ou Orange Money au numéro 77 699 08 71. Vous recevrez un reçu numérique après chaque transaction.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Y a-t-il des conditions pour participer ?</h4>
+                        <p>Vous devez être âgé d'au moins 18 ans et fournir une copie de votre pièce d'identité (CNI ou passeport) pour participer à la tontine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">CONTACTEZ-NOUS</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card p-4">
+                        <div class="text-center mb-4">
+                            <div class="logo mx-auto mb-3" style="width: fit-content;">
+                                <span style="font-weight: 800; color: #1a5276; font-size: 1.6rem;">BARHAMA</span>
+                                <span style="font-weight: 600; color: #2e86c1; font-size: 1.6rem;">BUSINESS</span>
+                            </div>
+                            <h4>Barhama Business</h4>
+                            <p><i class="fas fa-phone me-2"></i>77 699 08 71</p>
+                            <p><i class="fas fa-envelope me-2"></i>barhamabusiness@example.com</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Adresse: Dakar, Sénégal</p>
+                        </div>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nom complet</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Adresse email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div class="logo me-3">
+                            <span style="font-weight: 800; color: #1a5276; font-size: 1.2rem;">BARHAMA</span>
+                            <span style="font-weight: 600; color: #2e86c1;">BUSINESS</span>
+                        </div>
+                        <div>
+                            <h5>Tontine OrdiFacile</h5>
+                            <p class="mb-0">Une initiative Barhama Business</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>© 2025 Tous droits réservés</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="d-none d-md-inline">Ne manquez pas cette opportunité exceptionnelle! </span>
+                    Seulement 50 places disponibles!
+                </div>
+                <a href="#" class="btn btn-primary btn-sm" onclick="return checkInscriptionDate()">
+                    <i class="fas fa-edit me-1"></i>Je m'inscris!
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Date de début des inscriptions
+        const inscriptionStartDate = new Date('September 1, 2025 00:00:00').getTime();
+        
+        // Mise à jour du compte à rebours
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = inscriptionStartDate - now;
+            
+            // Calculs du temps pour les jours, heures, minutes et secondes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Affichage du résultat
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // Si le compte à rebours est terminé
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }
+        
+        // Mise à jour du compte à rebours toutes les 1 secondes
+        const countdownFunction = setInterval(updateCountdown, 1000);
+        
+        // Vérification de la date pour l'inscription
+        function checkInscriptionDate() {
+            const now = new Date().getTime();
+            
+            if (now < inscriptionStartDate) {
+                alert("Les inscriptions ne sont pas encore ouvertes. Revenez le 1er Septembre 2025!");
+                return false;
+            } else {
+                // Redirection vers le formulaire Google (à remplacer par votre lien)
+                window.open("https://forms.google.com", "_blank");
+                return true;
+            }
+        }
+        
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureBoxes = document.querySelectorAll('.feature-box');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            featureBoxes.forEach(box => {
+                box.style.opacity = 0;
+                box.style.transform = 'translateY(20px)';
+                box.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(box);
+            });
+        });
+    </script>
+</body>
+</html>
