@@ -241,9 +241,65 @@
             color: white !important;
             transform: translateY(-2px);
         }
+        
+        .alert {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+            animation: fadeIn 0.5s, fadeOut 0.5s 2.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 90px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
+    <!-- Alert Message -->
+    <div id="alertMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span id="alertText"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://api.whatsapp.com/send?phone=776990871&text=Bonjour%20Barhama%20Business,%20je%20souhaite%20plus%20d'informations%20sur%20la%20Tontine%20OrdiFacile." 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Urgency Banner -->
     <div class="urgency-banner">
         <div class="container">
@@ -255,8 +311,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
         <div class="container">
             <a class="navbar-brand logo-container" href="#">
-              <img src="logo.png" alt="Barhama Business" class="logo">
-                
+                <div class="logo">
+                    <span style="font-weight: 800; color: #1a5276; font-size: 1.4rem;">BARHAMA</span>
+                    <span style="font-weight: 600; color: #2e86c1;">BUSINESS</span>
+                </div>
                 <span class="brand-text d-none d-md-inline">TONTINE ORDIFACILE</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -286,12 +344,12 @@
         <div class="container">
             <div class="mb-4">
                 <div class="logo mx-auto" style="width: fit-content;">
-                    <span style="font-weight: 800; color: #1a5276; font-size: 1.8rem;">BARHAMA</span>
-                    <span style="font-weight: 600; color: #2e86c1; font-size: 1.8rem;">BUSINESS</span>
+                    <span style="font-weight: 800; color: #1a5276; font-size: 1.8rem;">Ordi</span>
+                    <span style="font-weight: 600; color: #2e86c1; font-size: 1.8rem;">Facile</span>
                 </div>
             </div>
-            <h1 class="display-3 fw-bold mb-4">Saisissez votre futur ordinateur aujourd’hui – Demain il sera peut-être trop tard!</h1>
-            <p class="lead mb-5">Une initiative exclusive de <strong>Barhama Business</strong> - Ne laissez pas le manque de cash vous priver d'un outil essentiel</p>
+            <h1 class="display-3 fw-bold mb-4">Votre ordinateur en 3 mois seulement</h1>
+            <p class="lead mb-5">Une initiative exclusive de <strong>Barhama Business</strong> - Une offre unique, limitée dans le temps : devenez propriétaire d’un PC portable avec un plan de paiement flexible.</p>
             
             <div class="countdown-box mx-auto" style="max-width: 600px;">
                 <h3 class="mb-4">INSCRIPTIONS OUVERTES DANS:</h3>
@@ -317,7 +375,7 @@
             
             <p class="mt-4">Les inscriptions débutent le <strong>1er Septembre 2025</strong></p>
             
-            <a href="https://forms.gle/qZEc6Lg1Kd2GLvxi8" class="btn btn-primary btn-lg mt-3" id="inscription-link" onclick="return checkInscriptionDate()">
+            <a href="#" class="btn btn-primary btn-lg mt-3" id="inscription-link" onclick="return checkInscriptionDate()">
                 <i class="fas fa-edit me-2"></i>JE M'INSCRIS MAINTENANT !
             </a>
             
@@ -331,7 +389,10 @@
     <section class="py-5" id="avantages">
         <div class="container">
             <h2 class="section-title text-center">POURQUOI CHOISIR ORDIFACILE ?</h2>
-            
+                <p class="text-center">
+                    Nous nous engageons à vous offrir des ordinateurs portables de qualité assortis d'une garantie de 6 mois. Votre satisfaction et votre tranquillité d'esprit sont
+                    nos priorités.
+                </p>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="feature-box">
@@ -416,7 +477,7 @@
             <h2 class="section-title text-center">UNE INITIATIVE EXCLUSIVE BARHAMA BUSINESS</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <p class="lead">Barhama Business est votre partenaire de confiance pour l'acquisition de matériel informatique de qualité. Avec des années d'expérience dans le reconditionnement d'ordinateurs, nous vous garantissons des appareils performants et fiables.</p>
+                    <p class="lead">Chez Barhama Business, nous croyons que chacun mérite d'avoir un outil de travail performant sans se ruiner. C'est dans cet esprit que nous avons lancé le projet Tontine OrdiFacile. Notre mission est de rendre la technologie accessible à tous. </p>
                     <div class="mt-5">
                         <div class="logo mx-auto" style="width: fit-content; padding: 10px 20px;">
                             <span style="font-weight: 800; color: #1a5276; font-size: 2.2rem;">BARHAMA</span>
@@ -442,7 +503,7 @@
                     
                     <div class="faq-item">
                         <h4>Que se passe-t-il si je ne peux pas payer une mensualité à temps ?</h4>
-                        <p>En cas de retard de mais de 30 jours, vous devrez payer deux mensualités pour vous remettre à jour. Après 60 jours de retard, le contrat sera résilié avec une pénalité de 10% sur les montants déjà versés.</p>
+                        <p>En cas de retard de plus de 30 jours, vous devrez payer deux mensualités pour vous remettre à jour. Après 60 jours de retard, le contrat sera résilié avec une pénalité de 10% sur les montants déjà versés.</p>
                     </div>
                     
                     <div class="faq-item">
@@ -483,20 +544,26 @@
                             <p><i class="fas fa-map-marker-alt me-2"></i>Adresse: Dakar, Sénégal</p>
                         </div>
                         
-                        <form>
+                        <form id="contactForm">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Nom complet</label>
-                                <input type="text" class="form-control" id="name">
+                                <label for="name" class="form-label">Nom complet *</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Numéro de téléphone *</label>
+                                <input type="tel" class="form-control" id="phone" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Adresse email</label>
                                 <input type="email" class="form-control" id="email">
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="3"></textarea>
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" rows="3" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fab fa-whatsapp me-2"></i>Envoyer via WhatsApp
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -524,7 +591,8 @@
                     <p>© 2025 Tous droits réservés</p>
                     <div class="social-icons">
                         <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=776990871&text=Bonjour%20Barhama%20Business,%20je%20souhaite%20plus%20d'informations%20sur%20vos%20services." 
+                           class="text-white me-2" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -540,7 +608,7 @@
                     <span class="d-none d-md-inline">Ne manquez pas cette opportunité exceptionnelle! </span>
                     Seulement 50 places disponibles!
                 </div>
-                <a href="https://forms.gle/qZEc6Lg1Kd2GLvxi8" class="btn btn-primary btn-sm" onclick="return checkInscriptionDate()">
+                <a href="#" class="btn btn-primary btn-sm" onclick="return checkInscriptionDate()">
                     <i class="fas fa-edit me-1"></i>Je m'inscris!
                 </a>
             </div>
@@ -591,7 +659,7 @@
                 return false;
             } else {
                 // Redirection vers le formulaire Google (à remplacer par votre lien)
-                window.open("https://forms.gle/qZEc6Lg1Kd2GLvxi8", "_blank");
+                window.open("https://forms.google.com", "_blank");
                 return true;
             }
         }
@@ -615,7 +683,63 @@
                 box.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 observer.observe(box);
             });
+            
+            // Gestion du formulaire de contact
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    sendWhatsAppMessage();
+                });
+            }
         });
+        
+        // Fonction pour envoyer le message via WhatsApp
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !phone || !message) {
+                showAlert('Veuillez remplir tous les champs obligatoires (*)', 'danger');
+                return;
+            }
+            
+            // Formatage du message pour WhatsApp
+            const whatsappMessage = `Nouveau message de ${name}%0A%0A` +
+                                   `📞 Téléphone: ${phone}%0A` +
+                                   (email ? `📧 Email: ${email}%0A` : '') +
+                                   `%0A📝 Message:%0A${message}`;
+            
+            // Numéro de téléphone (remplacez par votre numéro au format international sans +)
+            const whatsappNumber = '221776990871';
+            
+            // Ouvrir WhatsApp avec le message pré-rempli
+            window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`, '_blank');
+            
+            // Afficher un message de confirmation
+            showAlert('Votre message a été préparé pour envoi via WhatsApp!', 'success');
+            
+            // Réinitialiser le formulaire
+            document.getElementById('contactForm').reset();
+        }
+        
+        // Fonction pour afficher les alertes
+        function showAlert(message, type) {
+            const alertDiv = document.getElementById('alertMessage');
+            const alertText = document.getElementById('alertText');
+            
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+            alertText.textContent = message;
+            
+            alertDiv.style.display = 'block';
+            
+            // Masquer automatiquement après 3 secondes
+            setTimeout(() => {
+                alertDiv.style.display = 'none';
+            }, 3000);
+        }
     </script>
 </body>
 </html>
