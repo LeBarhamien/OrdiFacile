@@ -9,12 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a5276;
-            --primary-light: #2e86c1;
-            --secondary: #e74c3c;
-            --accent: #3498db;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
+            --primary: #2B60EE;
+            --secondary: #FF6B35;
+            --accent: #00C853;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
         }
         
         body {
@@ -24,7 +23,7 @@
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3') center/cover no-repeat;
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3') center/cover no-repeat;
             color: white;
             padding: 120px 0;
             text-align: center;
@@ -41,7 +40,7 @@
             content: '';
             display: block;
             width: 80px;
-            height: 4px;
+            height: 2px;
             background: var(--secondary);
             margin: 15px auto;
         }
@@ -53,6 +52,8 @@
             transition: transform 0.3s ease;
             background: white;
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .feature-box:hover {
@@ -61,30 +62,37 @@
         
         .feature-icon {
             font-size: 3rem;
-            color: var(--accent);
+            color: var(--primary);
             margin-bottom: 20px;
-        }
-        
-        .countdown-box {
-            background: var(--primary);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
             text-align: center;
-            margin-bottom: 30px;
         }
         
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+        .feature-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
-        .countdown-label {
-            font-size: 1rem;
-            text-transform: uppercase;
+        .feature-content p {
+            flex-grow: 1;
         }
         
         .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1A4ECC;
+            border-color: #1A4ECC;
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
             background-color: var(--secondary);
             border-color: var(--secondary);
             padding: 12px 30px;
@@ -93,15 +101,10 @@
             transition: all 0.3s;
         }
         
-        .btn-primary:hover {
-            background-color: #c0392b;
-            border-color: #c0392b;
+        .btn-secondary:hover {
+            background-color: #E05A2A;
+            border-color: #E05A2A;
             transform: scale(1.05);
-        }
-        
-        .btn-disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
         }
         
         .testimonial-card {
@@ -131,7 +134,7 @@
         
         @keyframes pulse {
             0% { background-color: var(--secondary); }
-            50% { background-color: #c0392b; }
+            50% { background-color: #E05A2A; }
             100% { background-color: var(--secondary); }
         }
         
@@ -140,7 +143,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 82, 118, 0.95);
+            background: rgba(43, 96, 238, 0.95);
             padding: 15px;
             text-align: center;
             z-index: 1000;
@@ -159,7 +162,7 @@
             top: 0;
             width: 60px;
             height: 60px;
-            background: var(--accent);
+            background: var(--primary);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -212,22 +215,22 @@
         }
         
         .partnership-section {
-            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            background: linear-gradient(to right, var(--primary), #3A75F0);
             color: white;
             padding: 60px 0;
             text-align: center;
         }
         
         .navbar {
-            background: linear-gradient(to right, var(--primary), var(--primary-light)) !important;
+            background: linear-gradient(to right, var(--primary), #3A75F0) !important;
         }
         
         footer {
-            background: linear-gradient(to right, var(--primary), var(--primary-light)) !important;
+            background: linear-gradient(to right, var(--dark), #2A2A4A) !important;
         }
         
         .custom-navbar {
-            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            background: linear-gradient(to right, var(--primary), #3A75F0);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
@@ -285,6 +288,90 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
+        
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-card-content {
+            flex-grow: 1;
+        }
+        
+        .tontine-details {
+            background: var(--light);
+            padding: 60px 0;
+        }
+        
+        .detail-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .info-boxes-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .info-box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .info-box-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .info-box-text {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+        }
+        
+        .equal-height-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .equal-height-cards .col-md-4 {
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -311,8 +398,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
         <div class="container">
             <a class="navbar-brand logo-container" href="#">
-              <img src="logo.png" alt="Barhama Business" class="logo">
-                <span class="brand-text d-none d-md-inline">TONTINE ORDIFACILE</span>
+                <img src="logo.png" alt="Barhama Business" class="logo">
+                <span class="brand-text d-none d-md-inline">BARHAMA BUSINESS</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -321,6 +408,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#avantages">Avantages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#details">Détails</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#fonctionnement">Comment ça marche</a>
@@ -340,39 +430,46 @@
     <section class="hero-section">
         <div class="container">
             <div class="mb-4">
-                <div class="logo mx-auto" style="width: fit-content;">
-                    <span style="font-weight: 800; color: #1a5276; font-size: 1.8rem;">Ordi</span>
-                    <span style="font-weight: 600; color: #2e86c1; font-size: 1.8rem;">Facile</span>
+                <div class="logo mx-auto" style="width: fit-content; padding: 15px 25px;">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 2.2rem;">Ordi</span>
+                    <span style="font-weight: 600; color: var(--secondary); font-size: 2.2rem;">Facile</span>
                 </div>
             </div>
-            <h1 class="display-3 fw-bold mb-4">Votre ordinateur en 3 mois seulement</h1>
-            <p class="lead mb-5">Une initiative exclusive de <strong>Barhama Business</strong> - Une offre unique, limitée dans le temps : devenez propriétaire d’un PC portable avec un plan de paiement flexible.</p>
+            <h1 class="display-4 fw-bold mb-4">Votre ordinateur en 3 mois seulement</h1>
             
-            <div class="countdown-box mx-auto" style="max-width: 600px;">
-                <h3 class="mb-4">INSCRIPTIONS OUVERTES DANS:</h3>
-                <div class="d-flex justify-content-around">
-                    <div>
-                        <div class="countdown-number" id="days">00</div>
-                        <div class="countdown-label">Jours</div>
+            <!-- Description bien visible -->
+            <div class="hero-description">
+                <p>Une initiative exclusive de <strong>Barhama Business</strong> - Devenez propriétaire d'un PC portable avec un plan de paiement simple et accessible.</p>
+            </div>
+            
+            <!-- Les 3 tableaux de même taille -->
+            <div class="info-boxes-container">
+                <div class="info-box">
+                    <div class="info-box-icon">
+                        <i class="fas fa-laptop"></i>
                     </div>
-                    <div>
-                        <div class="countdown-number" id="hours">00</div>
-                        <div class="countdown-label">Heures</div>
+                    <div class="info-box-title">Ordinateur Portable</div>
+                    <div class="info-box-text">De qualité avec garantie de 6 mois</div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="info-box-icon">
+                        <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <div>
-                        <div class="countdown-number" id="minutes">00</div>
-                        <div class="countdown-label">Minutes</div>
+                    <div class="info-box-title">3 Mensualités</div>
+                    <div class="info-box-text">Paiement étalé sans frais supplémentaires</div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="info-box-icon">
+                        <i class="fas fa-truck"></i>
                     </div>
-                    <div>
-                        <div class="countdown-number" id="seconds">00</div>
-                        <div class="countdown-label">Secondes</div>
-                    </div>
+                    <div class="info-box-title">Livraison Rapide</div>
+                    <div class="info-box-text">Dans les 24h après dernier paiement</div>
                 </div>
             </div>
             
-            <p class="mt-4">Les inscriptions débutent le <strong>1er Septembre 2025</strong></p>
-            
-            <a href="#" class="btn btn-primary btn-lg mt-3" id="inscription-link" onclick="return checkInscriptionDate()">
+            <a href="https://forms.gle/hNxbn8RcmHEzXNVPA" class="btn btn-secondary btn-lg mt-3">
                 <i class="fas fa-edit me-2"></i>JE M'INSCRIS MAINTENANT !
             </a>
             
@@ -386,18 +483,19 @@
     <section class="py-5" id="avantages">
         <div class="container">
             <h2 class="section-title text-center">POURQUOI CHOISIR ORDIFACILE ?</h2>
-                <p class="text-center">
-                    Nous nous engageons à vous offrir des ordinateurs portables de qualité assortis d'une garantie de 6 mois. Votre satisfaction et votre tranquillité d'esprit sont
-                    nos priorités.
-                </p>
-            <div class="row g-4">
+            <p class="text-center">
+                Nous nous engageons à vous offrir des ordinateurs portables de qualité assortis d'une garantie de 6 mois. Votre satisfaction et votre tranquillité d'esprit sont nos priorités.
+            </p>
+            <div class="row g-4 equal-height-cards">
                 <div class="col-md-4">
                     <div class="feature-box">
                         <div class="feature-icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        <h3>Paiement Échelonné</h3>
-                        <p>Payez votre ordinateur en 3 mensualités sans frais supplémentaires. Seulement 5000 FCFA de frais d'adhésion.</p>
+                        <div class="feature-content">
+                            <h3>Paiement Échelonné</h3>
+                            <p>Payez votre ordinateur en 3 mensualités sans frais supplémentaires. Une solution adaptée à votre budget.</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -406,8 +504,10 @@
                         <div class="feature-icon">
                             <i class="fas fa-lock"></i>
                         </div>
-                        <h3>Sécurité Totale</h3>
-                        <p>Contrat légalement établi pour protéger vos intérêts. Tous les paiements sont tracés et reçus.</p>
+                        <div class="feature-content">
+                            <h3>Sécurité Totale</h3>
+                            <p>Contrat légalement établi pour protéger vos intérêts. Tous les paiements sont tracés et reçus.</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -416,8 +516,10 @@
                         <div class="feature-icon">
                             <i class="fas fa-tools"></i>
                         </div>
-                        <h3>Garantie Inclusion</h3>
-                        <p>6 mois de garantie sur tous les ordinateurs. Assistance technique incluse pendant la période de garantie.</p>
+                        <div class="feature-content">
+                            <h3>Garantie Inclusion</h3>
+                            <p>6 mois de garantie sur tous les ordinateurs. Assistance technique incluse pendant la période de garantie.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -425,6 +527,51 @@
             <div class="limited-offer mt-5">
                 <h3 class="text-danger"><i class="fas fa-exclamation-circle me-2"></i>OFFRE LIMITÉE</h3>
                 <p>Cette première édition de la Tontine OrdiFacile est limitée à <strong>50 participants seulement</strong>. Une fois ces places pourvues, les inscriptions seront closes jusqu'à la prochaine édition. Ne tardez pas !</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tontine Details Section -->
+    <section class="tontine-details" id="details">
+        <div class="container">
+            <h2 class="section-title text-center">DÉTAILS DE LA TONTINE</h2>
+            
+            <div class="row equal-height-cards">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <div class="info-card-content">
+                            <h4><i class="fas fa-info-circle me-2 text-primary"></i> Comment fonctionne notre tontine ?</h4>
+                            <p>La Tontine OrdiFacile est un système d'achat groupé qui vous permet d'acquérir un ordinateur portable en payant en 3 mensualités. Après une petite participation initiale, vous effectuez 3 versements mensuels, et à l'issue du dernier paiement, vous recevez votre ordinateur.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-content">
+                            <h4><i class="fas fa-file-contract me-2 text-primary"></i> Engagement contractuel</h4>
+                            <p>Chaque participant signe un contrat qui précise toutes les conditions : modèle d'ordinateur, montant des mensualités, dates de paiement, conditions de livraison, et garantie. Ce contrat protège à la fois l'acheteur et le vendeur.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <div class="info-card-content">
+                            <h4><i class="fas fa-laptop me-2 text-primary"></i> Choix de l'ordinateur</h4>
+                            <p>Vous pouvez choisir parmi plusieurs modèles d'ordinateurs portables d'occasion de qualité, avec différentes configurations (processeur, RAM, stockage). Tous les appareils sont testés, reconditionnés si nécessaire, et garantis 6 mois.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-content">
+                            <h4><i class="fas fa-shield-alt me-2 text-primary"></i> Sécurité des paiements</h4>
+                            <p>Tous les paiements sont effectués via des moyens sécurisés (Wave, Orange Money) et font l'objet d'un reçu. Vous avez ainsi une trace de chaque transaction et pouvez suivre l'état de votre participation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p>Pour toute question supplémentaire, n'hésitez pas à <a href="#contact">nous contacter</a> ou consulter notre <a href="#faq">section FAQ</a>.</p>
             </div>
         </div>
     </section>
@@ -438,31 +585,41 @@
                 <div class="col-lg-6">
                     <div class="how-it-works-step">
                         <div class="step-number">1</div>
-                        <h3>Inscription et Frais d'Adhésion</h3>
-                        <p>Remplissez le formulaire d'inscription et payez les frais d'adhésion de 5000 FCFA (non remboursables).</p>
+                        <h3>Inscription</h3>
+                        <p>Remplissez le formulaire d'inscription pour réserver votre place dans la tontine. Une fois inscrit, nous vous enverrons les détails pour finaliser votre participation.</p>
                     </div>
                     
                     <div class="how-it-works-step">
                         <div class="step-number">2</div>
                         <h3>Signature du Contrat</h3>
-                        <p>Nous établissons un contrat de tontine qui précise toutes les conditions et modalités de paiement.</p>
+                        <p>Nous établissons ensemble un contrat de tontine qui précise toutes les conditions : modèle d'ordinateur choisi, montant et dates des mensualités, conditions de livraison.</p>
                     </div>
                     
                     <div class="how-it-works-step">
                         <div class="step-number">3</div>
                         <h3>Paiement des Mensualités</h3>
-                        <p>Vous effectuez 3 versements mensuels égaux (avant le 10 de chaque mois) pour le prix de l'ordinateur choisi.</p>
+                        <p>Vous effectuez 3 versements mensuels aux dates convenues. Les paiements se font via Wave ou Orange Money pour plus de sécurité et de traçabilité.</p>
                     </div>
                     
                     <div class="how-it-works-step">
                         <div class="step-number">4</div>
-                        <h3>Livraison de l'Ordinateur</h3>
-                        <p>Dès le dernier paiement effectué, nous vous livrons votre ordinateur sous 24h avec sa garantie de 6 mois.</p>
+                        <h3>Livraison de l'Ordinateur</h4>
+                        <p>Dès le dernier paiement effectué, nous vous livrons votre ordinateur sous 24h avec sa garantie de 6 mois. Vous devenez ainsi propriétaire de votre appareil.</p>
+                    </div>
+                    <div class="how-it-works-step">
+                        <div class="step-number">4</div>
+                        <h3>Frais d'adhésion</h4>
+                        <p>L'Adhérent doit versé la somme de 5 000 F CFA non remboursable. Ces frais couvrent les coûts administratifs et ne font pas partie du prix total de l'ordinateur..</p>
                     </div>
                 </div>
                 
                 <div class="col-lg-6">
                     <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3" alt="Processus tontine" class="img-fluid rounded">
+                    
+                    <div class="mt-4 p-4" style="background-color: var(--primary); color: white; border-radius: 10px;">
+                        <h4><i class="fas fa-lightbulb me-2"></i>À savoir</h4>
+                        <p>La tontine OrdiFacile a été spécialement conçue pour rendre l'aquisition d'ordinateurs portable plus facile. C'est une solution idéale pour les étudiants, travailleurs indépendants et toutes les personnes ayant besoin d'un ordinateur sans avoir à débourser la totalité du montant en une fois.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -475,12 +632,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
                     <p class="lead">Chez Barhama Business, nous croyons que chacun mérite d'avoir un outil de travail performant sans se ruiner. C'est dans cet esprit que nous avons lancé le projet Tontine OrdiFacile. Notre mission est de rendre la technologie accessible à tous. </p>
-                    <div class="mt-5">
-                        <div class="logo mx-auto" style="width: fit-content; padding: 10px 20px;">
-                            <span style="font-weight: 800; color: #1a5276; font-size: 2.2rem;">BARHAMA</span>
-                            <span style="font-weight: 600; color: #2e86c1; font-size: 2.2rem;">BUSINESS</span>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -517,6 +669,11 @@
                         <h4>Y a-t-il des conditions pour participer ?</h4>
                         <p>Vous devez être âgé d'au moins 18 ans et fournir une copie de votre pièce d'identité (CNI ou passeport) pour participer à la tontine.</p>
                     </div>
+                    
+                    <div class="faq-item">
+                        <h4>Puis-je choisir le modèle d'ordinateur que je veux ?</h4>
+                        <p>Oui, nous proposons plusieurs modèles avec différentes configurations. Vous choisissez celui qui correspond le mieux à vos besoins et à votre budget.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -532,13 +689,13 @@
                     <div class="card p-4">
                         <div class="text-center mb-4">
                             <div class="logo mx-auto mb-3" style="width: fit-content;">
-                                <span style="font-weight: 800; color: #1a5276; font-size: 1.6rem;">BARHAMA</span>
-                                <span style="font-weight: 600; color: #2e86c1; font-size: 1.6rem;">BUSINESS</span>
+                                <span style="font-weight: 800; color: var(--primary); font-size: 1.6rem;">BARHAMA</span>
+                                <span style="font-weight: 600; color: var(--secondary); font-size: 1.6rem;">BUSINESS</span>
                             </div>
                             <h4>Barhama Business</h4>
-                            <p><i class="fas fa-phone me-2"></i>77 699 08 71</p>
+                            <p><i class="fas fa-phone me-2"></i>78 164 83 31 / 77 699 08 71</p>
                             <p><i class="fas fa-envelope me-2"></i>barhamabusiness@example.com</p>
-                            <p><i class="fas fa-map-marker-alt me-2"></i>Adresse: Dakar, Sénégal</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Dakar, Sénégal</p>
                         </div>
                         
                         <form id="contactForm">
@@ -574,8 +731,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="d-flex align-items-center">
-                      <img src="logo.png" alt="Barhama Business" class="logo">
-                        
+                        <div class="logo me-3">
+                            <span style="font-weight: 800; color: var(--primary);">Ordi</span>
+                            <span style="font-weight: 600; color: var(--secondary);">Facile</span>
+                        </div>
                         <div>
                             <h5>Tontine OrdiFacile</h5>
                             <p class="mb-0">Une initiative Barhama Business</p>
@@ -603,7 +762,7 @@
                     <span class="d-none d-md-inline">Ne manquez pas cette opportunité exceptionnelle! </span>
                     Seulement 50 places disponibles!
                 </div>
-                <a href="#" class="btn btn-primary btn-sm" onclick="return checkInscriptionDate()">
+                <a href="https://forms.gle/hNxbn8RcmHEzXNVPA" class="btn btn-secondary btn-sm">
                     <i class="fas fa-edit me-1"></i>Je m'inscris!
                 </a>
             </div>
@@ -612,56 +771,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Date de début des inscriptions
-        const inscriptionStartDate = new Date('September 1, 2025 00:00:00').getTime();
-        
-        // Mise à jour du compte à rebours
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = inscriptionStartDate - now;
-            
-            // Calculs du temps pour les jours, heures, minutes et secondes
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Affichage du résultat
-            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-            
-            // Si le compte à rebours est terminé
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("days").innerHTML = "00";
-                document.getElementById("hours").innerHTML = "00";
-                document.getElementById("minutes").innerHTML = "00";
-                document.getElementById("seconds").innerHTML = "00";
-            }
-        }
-        
-        // Mise à jour du compte à rebours toutes les 1 secondes
-        const countdownFunction = setInterval(updateCountdown, 1000);
-        
-        // Vérification de la date pour l'inscription
-        function checkInscriptionDate() {
-            const now = new Date().getTime();
-            
-            if (now < inscriptionStartDate) {
-                alert("Les inscriptions ne sont pas encore ouvertes. Revenez le 1er Septembre 2025!");
-                return false;
-            } else {
-                // Redirection vers le formulaire Google (à remplacer par votre lien)
-                window.open("https://forms.google.com", "_blank");
-                return true;
-            }
-        }
-        
         // Animation au défilement
         document.addEventListener('DOMContentLoaded', function() {
-            const featureBoxes = document.querySelectorAll('.feature-box');
+            const featureBoxes = document.querySelectorAll('.feature-box, .info-card');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
